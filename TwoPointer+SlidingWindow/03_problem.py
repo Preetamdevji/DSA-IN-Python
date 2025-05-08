@@ -38,17 +38,19 @@
 # maximunSumOfSubArray(nums)
 
 # challenge part same element cannot plus 
-nums: list = [1,5,4,2,9,9,9] 
-k: int = 3
+# nums: list = [1,5,4,2,9,9,9] 
+# k: int = 3
 
-def maximunSumOfSubArray(nums):
+# def maximunSumOfSubArray(nums):
         
-    window_Sum = sum(nums[:k])
+#     uniqueSet = set()
+#     window_Sum = sum(nums[:k])
     
-    for i in range(1, len(nums) - k + 1):
-        if nums[i - 1] != nums[i + k - 1]:
-            window_Sum = window_Sum - nums[i - 1] + nums[i + k - 1]
-    print("window_Sum", window_Sum)
+#     for i in range(1, len(nums) - k + 1):
+#         if nums[i - 1] != nums[i + k - 1]:
+#             uniqueSet = window_Sum
+#             uniqueSet = window_Sum - nums[i - 1] + nums[i + k - 1]
+#     print("window_Sum", window_Sum)
         
 
-maximunSumOfSubArray(nums)
+# maximunSumOfSubArray(nums)
