@@ -1,5 +1,6 @@
 from models.task_data import TaskData
 from datetime import datetime, timedelta
+from typing import List
 
 now = datetime.now()
 due = now + timedelta(days=2)
@@ -57,6 +58,20 @@ class PersonalTask(Task):
 class RecurringTask(Task):
     def __init__(self):
         super().__init__(data: TaskData)
+
+
+class TaskManager:
+    def __init__(self):
+        self.task_list : List[Task] = []
+
+    def add_task(self, task: Task):
+        self.task_list.append(task)
+        print(f"✅ Task '{task.title}' added successfully.")
+
+    #check this function
+    # def remove_task(self, id: int)
+    #     self.task_list.id.remove(task)
+    #     print(f"✅ Task '{task.title}' remove successfully.")
 
 
     
