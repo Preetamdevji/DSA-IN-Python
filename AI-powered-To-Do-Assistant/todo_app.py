@@ -17,8 +17,12 @@ task_data = TaskData(
 
 
 class Task:
+    _id_counter = 1 
     
     def __init__(self, data: TaskData):
+        self.task_id = Task._id_counter
+        Task._id_counter += 1
+
         self.title = data.title
         self.description = data.description
         self.created_at = data.created_at
@@ -60,18 +64,3 @@ class RecurringTask(Task):
         super().__init__(data: TaskData)
 
 
-class TaskManager:
-    def __init__(self):
-        self.task_list : List[Task] = []
-
-    def add_task(self, task: Task):
-        self.task_list.append(task)
-        print(f"✅ Task '{task.title}' added successfully.")
-
-    #check this function
-    # def remove_task(self, id: int)
-    #     self.task_list.id.remove(task)
-    #     print(f"✅ Task '{task.title}' remove successfully.")
-
-
-    
